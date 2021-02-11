@@ -5,6 +5,8 @@ using System;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+//CURRENTLY ATTACHED TO: Canvas_TimeUI > Takodachis > [each ability and takodachi]
+
 public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public bool isOver = false;

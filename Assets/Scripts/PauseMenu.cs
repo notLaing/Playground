@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//CURRENTLY ATTACHED TO: Canvas_TimeUI
 public class PauseMenu : MonoBehaviour
 {
     public static bool gamePaused = false;

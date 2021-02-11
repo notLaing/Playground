@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//CURRENTLY ATTACHED TO: Player
+
 public class PlayerController : MonoBehaviour
 {
     //player/camera movement variables
@@ -50,6 +52,8 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.Atan2(diff.z, diff.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(0, 90 - angle, 0);
         }
+
+        //Time slow rotation. Use lerp
 
         //Move
         velocity = new Vector3(h * speed, speedY, v * speed);

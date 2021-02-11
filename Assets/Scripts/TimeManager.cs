@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//CURRENTLY ATTACHED TO: Canvas_TimeUI
+
 public class TimeManager : MonoBehaviour
 {
     //https://www.youtube.com/watch?v=0VGosgaoTsw
