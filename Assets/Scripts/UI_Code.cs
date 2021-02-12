@@ -38,7 +38,16 @@ public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         transform.localScale = Vector3.one;
     }
 
-    public void Ability1()
+    public void Ability0()
+    {
+        Debug.Log("Ability 0");
+        timeScript.DeactivateUI();
+        //OnPointerExit();
+        isOver = false;
+        transform.localScale = Vector3.one;
+    }
+
+    public void Ability1()               //since each ability needs to go to its own onClick anyway, don't need to separate it out like this? Might need it when abilities do stuff. Could at least move the common stuff to its own function
     {
         Debug.Log("Ability 1");
         timeScript.DeactivateUI();
@@ -59,15 +68,6 @@ public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void Ability3()
     {
         Debug.Log("Ability 3");
-        timeScript.DeactivateUI();
-        //OnPointerExit();
-        isOver = false;
-        transform.localScale = Vector3.one;
-    }
-
-    public void Ability4()
-    {
-        Debug.Log("Ability 4");
         timeScript.DeactivateUI();
         //OnPointerExit();
         isOver = false;

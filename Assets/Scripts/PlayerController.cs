@@ -35,6 +35,12 @@ public class PlayerController : MonoBehaviour
         //movement input
         v = Input.GetAxis("Vertical");
         h = Input.GetAxis("Horizontal");
+        //if player is on ground, they can jump and spawn particles while moving
+        if (player.isGrounded)
+        {
+            if (Input.GetButton("Jump")) speedY = jumpImpulse;
+            else speedY = 0;
+        }
     }
 
     void FixedUpdate()
@@ -59,11 +65,13 @@ public class PlayerController : MonoBehaviour
         velocity = new Vector3(h * speed, speedY, v * speed);
 
         //if player is on ground, they can jump and spawn particles while moving
-        if (player.isGrounded)
+        /*if (player.isGrounded)
         {
             if (Input.GetButton("Jump")) speedY = jumpImpulse;
             else speedY = 0;
-        }
+        }*/
+
+
 
         speedY += (gravity * Time.deltaTime);
         player.Move(velocity * Time.deltaTime);
