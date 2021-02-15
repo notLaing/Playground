@@ -17,18 +17,15 @@ public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         timeScript = FindObjectOfType<TimeManager>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Debug.Log("Mouse enter");
         isOver = true;
         transform.localScale = new Vector3(2f, 2f, 2f);
+
+        //play sound
+        FindObjectOfType<AudioManager>().Play("AbilityHover");
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -38,6 +35,11 @@ public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         transform.localScale = Vector3.one;
     }
 
+    public void AbilitySelect()
+    {
+        FindObjectOfType<AudioManager>().Play("AbilitySelect");
+    }
+
     public void Ability0()
     {
         Debug.Log("Ability 0");
@@ -45,6 +47,7 @@ public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //OnPointerExit();
         isOver = false;
         transform.localScale = Vector3.one;
+        AbilitySelect();
     }
 
     public void Ability1()               //since each ability needs to go to its own onClick anyway, don't need to separate it out like this? Might need it when abilities do stuff. Could at least move the common stuff to its own function
@@ -54,6 +57,7 @@ public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //OnPointerExit();
         isOver = false;
         transform.localScale = Vector3.one;
+        AbilitySelect();
     }
 
     public void Ability2()
@@ -63,6 +67,7 @@ public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //OnPointerExit();
         isOver = false;
         transform.localScale = Vector3.one;
+        AbilitySelect();
     }
 
     public void Ability3()
@@ -72,5 +77,6 @@ public class UI_Code : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //OnPointerExit();
         isOver = false;
         transform.localScale = Vector3.one;
+        AbilitySelect();
     }
 }
