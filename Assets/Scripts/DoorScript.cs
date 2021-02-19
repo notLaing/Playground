@@ -4,14 +4,34 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    /* TO-DO
-     * Move the door if all the puzzle pieces align
-     * LERP over x seconds
-    */
+    //Attached to Door
+    public GameObject puzzle0, puzzle1, puzzle2;
+    Vector3 openPosition;
+    Vector3 closedPosition;
+    float time = 0f;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        closedPosition = transform.position;
+        openPosition = new Vector3(transform.position.x, transform.position.y + 10f, transform.position.z);
+    }
+
+    void FixedUpdate()
+    {
+        if (puzzle0.GetComponent<PuzzleSwitch>().correctPlace == true
+            && puzzle1.GetComponent<PuzzleSwitch>().correctPlace == true
+            && puzzle2.GetComponent<PuzzleSwitch>().correctPlace == true)
+        {
+            openDoor();
+            time += Time.fixedUnscaledDeltaTime;
+            puzzle0.GetComponent<PuzzleSwitch>().allowPuzzle = false;
+            puzzle1.GetComponent<PuzzleSwitch>().allowPuzzle = false;
+            puzzle2.GetComponent<PuzzleSwitch>().allowPuzzle = false;
+        }
+    }
+
+    void openDoor()
+    {
+        transform.position = Vector3.Lerp(closedPosition, openPosition, time / 2.5f);
     }
 }

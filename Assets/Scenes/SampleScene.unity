@@ -1135,7 +1135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659062760}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.028194495, y: 0.496, z: -0.5166667}
+  m_LocalPosition: {x: -0.16152783, y: 0.496, z: -0.5166667}
   m_LocalScale: {x: 0.016666668, y: 2, z: 0.033333335}
   m_Children:
   - {fileID: 1768324710}
@@ -1157,10 +1157,12 @@ MonoBehaviour:
   player: {fileID: 1450264436}
   puzzlePiece: {fileID: 1768324709}
   destinations:
-  - -18
-  - 2
-  - 12
+  - -10
+  - 10
+  - 33
   z: 15.5
+  correctPlace: 0
+  allowPuzzle: 1
 --- !u!65 &659062763
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1339,6 +1341,8 @@ MonoBehaviour:
   - 0
   - -8
   z: 5.5
+  correctPlace: 0
+  allowPuzzle: 1
 --- !u!1 &669291499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1522,7 @@ GameObject:
   - component: {fileID: 809852299}
   - component: {fileID: 809852298}
   - component: {fileID: 809852297}
+  - component: {fileID: 809852301}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -1557,7 +1562,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 33cd5d7de758dd644a39f54967eda48b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1601,6 +1606,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809852301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809852296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7dc3311e16c474fb9ec0c57a2b2d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle0: {fileID: 659062760}
+  puzzle1: {fileID: 662613858}
+  puzzle2: {fileID: 1793287143}
 --- !u!1 &859332394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,7 +1645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859332394}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18, y: 0.5, z: 25.5}
+  m_LocalPosition: {x: 10, y: 0.5, z: 25.5}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
   - {fileID: 1013563181}
@@ -2648,7 +2668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1768324709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18, y: 0.5, z: 15.5}
+  m_LocalPosition: {x: -10, y: 0.5, z: 15.500001}
   m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
   - {fileID: 1148815922}
@@ -2683,7 +2703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793287143}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.038472172, y: 0.496, z: -0.5166667}
+  m_LocalPosition: {x: 0.17180552, y: 0.496, z: -0.5166667}
   m_LocalScale: {x: 0.016666668, y: 2, z: 0.033333335}
   m_Children:
   - {fileID: 859332395}
@@ -2767,10 +2787,12 @@ MonoBehaviour:
   player: {fileID: 1450264436}
   puzzlePiece: {fileID: 859332394}
   destinations:
-  - 18
-  - -2
+  - 10
   - -10
+  - -15
   z: 25.5
+  correctPlace: 0
+  allowPuzzle: 1
 --- !u!1 &1835061754
 GameObject:
   m_ObjectHideFlags: 0
